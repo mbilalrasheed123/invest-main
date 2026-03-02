@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Register - InvestWise
+    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: { extend: { colors: { "primary": "#137fec", "primary-dark": "#0f65bd", "background-light": "#f6f7f8", "background-dark": "#101922", "surface-dark": "#1c2127", "border-dark": "#3b4754", "text-secondary": "#9dabb9" }, fontFamily: { "display": ["Inter", "sans-serif"] }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" } } }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #101922;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3b4754;
+            border-radius: 4px;
+        }
+
+        .glass-panel {
+            background: rgba(28, 33, 39, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(59, 71, 84, 0.5);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased min-h-screen flex flex-col overflow-hidden">
+    <div class="relative flex min-h-screen w-full flex-row overflow-hidden">
+        <div class="hidden lg:flex w-1/2 relative flex-col justify-between p-12 overflow-hidden bg-cover bg-center"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBKytM8boRSBiKn3Y1Aw8i9pqo8iYy0r8p21qKEu-ynURs0XCQVjuTSWJhPTpTir5OPpEZE2oCXe3z81Gq43SdmHZIpCk7Q3DBO1arFEjbNp0rH9P5FIt1f4c6U2Bzch65fl2BC95mGlS8tHqPM1O02YmbvwvQVbjZUPaI8iGNH2HeHUVADZDTMjaxNUfeyIo0popGN8ftzODd25HaeuH91v50Do1a0Ep6ctUGHc3rqJ4lvdFO1_ZSLt1ndXu5DeB52AR1EQLjUEZXI");'>
+            <div
+                class="absolute inset-0 bg-gradient-to-br from-background-dark/90 via-background-dark/50 to-primary/30 z-0">
+            </div>
+            <div class="relative z-10">
+                <div class="flex items-center gap-2 mb-8">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center"><span
+                            class="material-symbols-outlined text-white text-2xl">ssid_chart</span></div>
+                    <span class="text-2xl font-bold tracking-tight text-white">TradeCore</span>
+                </div>
+                <h1 class="text-5xl font-black leading-tight tracking-tight text-white max-w-lg mb-6">Start your
+                    investment journey today.</h1>
+                <p class="text-lg text-slate-300 max-w-md">Create your free account and begin earning daily returns with
+                    AI-powered trading.</p>
+            </div>
+            <div class="relative z-10 flex gap-6 text-sm text-slate-400">
+                <span>© 2024 TradeCore Inc.</span>
+                <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="w-full lg:w-1/2 flex flex-col items-center justify-center p-6 sm:p-12 relative">
+            <div class="absolute inset-0 lg:hidden z-0">
+                <div class="absolute inset-0 bg-background-dark"></div>
+                <div
+                    class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-background-dark to-background-dark">
+                </div>
+            </div>
+            <div class="w-full max-w-[480px] z-10">
+                <div class="glass-panel p-8 rounded-xl shadow-2xl">
+                    <div class="flex flex-col gap-2 text-center mb-8">
+                        <h2 class="text-white text-3xl font-bold tracking-tight">Create Account</h2>
+                        <p class="text-text-secondary text-sm">Join InvestWise and start your automated wealth journey.
+                        </p>
+                    </div>
+                    <form id="registerForm" class="flex flex-col gap-5">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-slate-200 text-sm font-medium" for="name">Full Name</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary"><span
+                                        class="material-symbols-outlined text-[20px]">person</span></span>
+                                <input
+                                    class="form-input flex w-full rounded-lg text-white border border-border-dark bg-surface-dark focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-text-secondary pl-11 pr-4 py-3 text-sm font-normal transition-all duration-200"
+                                    name="name" placeholder="John Doe" type="text" required />
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-slate-200 text-sm font-medium" for="email">Email Address</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary"><span
+                                        class="material-symbols-outlined text-[20px]">mail</span></span>
+                                <input
+                                    class="form-input flex w-full rounded-lg text-white border border-border-dark bg-surface-dark focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-text-secondary pl-11 pr-4 py-3 text-sm font-normal transition-all duration-200"
+                                    name="email" placeholder="john.doe@example.com" type="email" required />
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-slate-200 text-sm font-medium">Password</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary"><span
+                                        class="material-symbols-outlined text-[20px]">lock</span></span>
+                                <input
+                                    class="form-input flex w-full rounded-lg text-white border border-border-dark bg-surface-dark focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-text-secondary pl-11 pr-11 py-3 text-sm font-normal transition-all duration-200"
+                                    name="password" placeholder="Min 6 characters" type="password" required
+                                    minlength="6" />
+                                <button
+                                    class="toggle-password absolute right-3 top-1/2 -translate-y-1/2 text-text-secondary hover:text-white transition-colors cursor-pointer"
+                                    type="button"><span
+                                        class="material-symbols-outlined text-[20px]">visibility_off</span></button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-slate-200 text-sm font-medium">Confirm Password</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary"><span
+                                        class="material-symbols-outlined text-[20px]">lock</span></span>
+                                <input
+                                    class="form-input flex w-full rounded-lg text-white border border-border-dark bg-surface-dark focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-text-secondary pl-11 pr-4 py-3 text-sm font-normal transition-all duration-200"
+                                    name="confirmPassword" placeholder="Confirm your password" type="password" required
+                                    minlength="6" />
+                            </div>
+                        </div>
+                        <button
+                            class="mt-2 flex w-full items-center justify-center rounded-lg bg-primary py-3 px-4 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary-dark hover:shadow-primary/30 active:scale-[0.98] transition-all duration-200"
+                            type="submit">Create Account</button>
+                        <p class="text-center text-sm text-text-secondary">
+                            Already have an account? <a
+                                class="font-medium text-white hover:text-primary transition-colors" href="login.html">Log
+                                in</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Platform Settings - InvestWise
+    </title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#13ec5b", "background-dark": "#0a120c" }, fontFamily: { "display": ["Inter"] } } } }</script>
+    <style>
+        .glass-card {
+            background: rgba(19, 236, 91, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(19, 236, 91, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark font-display text-slate-100 antialiased">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Admin Sidebar Partial -->
+<aside class="w-64 flex-shrink-0 flex flex-col bg-black/40 border-r border-primary/10 backdrop-blur-md">
+    <div class="p-6 flex items-center gap-3">
+        <div class="bg-primary/20 p-2 rounded-lg"><span
+                class="material-symbols-outlined text-primary">account_balance_wallet</span></div>
+        <div>
+            <h1 class="text-sm font-bold tracking-tight uppercase text-primary">InvestWise Admin</h1>
+            <p class="text-[10px] text-slate-400 font-medium">Control Panel</p>
+        </div>
+    </div>
+    <nav class="flex-1 mt-4 px-3 space-y-1">
+        <a href="admin.html"
+            class="text-slate-400 hover:text-primary hover:bg-primary/5 flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all">
+            <span class="material-symbols-outlined">dashboard</span><span
+                class="text-sm font-medium">Overview</span></a>
+        <a href="admin-users.html"
+            class="text-slate-400 hover:text-primary hover:bg-primary/5 flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all">
+            <span class="material-symbols-outlined">group</span><span class="text-sm font-medium">Users</span></a>
+        <a href="admin-plans.html"
+            class="text-slate-400 hover:text-primary hover:bg-primary/5 flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all">
+            <span class="material-symbols-outlined">monetization_on</span><span
+                class="text-sm font-medium">Plans</span></a>
+        <a href="admin-deposits.html"
+            class="text-slate-400 hover:text-primary hover:bg-primary/5 flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all">
+            <span class="material-symbols-outlined">add_card</span><span class="text-sm font-medium">Deposits</span></a>
+        <a href="admin-withdrawals.html"
+            class="text-slate-400 hover:text-primary hover:bg-primary/5 flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all">
+            <span class="material-symbols-outlined">send</span><span class="text-sm font-medium">Withdrawals</span></a>
+    </nav>
+    <div class="p-4 border-t border-primary/5">
+        <div class="bg-primary/5 rounded-xl p-4 border border-primary/10">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center"><span
+                        class="material-symbols-outlined text-primary text-sm">admin_panel_settings</span></div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-xs font-semibold truncate">
+                        Bilal Admin
+                    </p>
+                    <p class="text-[10px] text-primary/70">Admin</p>
+                </div>
+                <a href="#" class="logout-btn"><span
+                        class="material-symbols-outlined text-xs text-slate-500 hover:text-red-500">logout</span></a>
+            </div>
+        </div>
+    </div>
+</aside>
+            <main class="flex-1 flex flex-col overflow-y-auto">
+                <header
+                    class="h-16 flex items-center px-8 border-b border-primary/5 sticky top-0 bg-background-dark/80 backdrop-blur-md z-10">
+                    <h2 class="text-lg font-bold">Platform Settings</h2>
+                </header>
+                <div class="p-8 flex items-center justify-center flex-1">
+                    <div class="text-center space-y-4">
+                        <span class="material-symbols-outlined text-primary text-6xl">settings</span>
+                        <h3 class="text-2xl font-bold">Platform Configuration</h3>
+                        <p class="text-slate-400">Site settings, branding, and configurations.<br />Manage from the
+                            Stitch design or extend via API.</p>
+                    </div>
+                </div>
+            </main>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

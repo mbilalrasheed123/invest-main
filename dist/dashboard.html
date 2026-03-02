@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Dashboard - InvestWise
+    </title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#13ec5b", "background-light": "#f6f8f6", "background-dark": "#102216" }, fontFamily: { "display": ["Inter"] }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" } } } }</script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .primary-gradient {
+            background: linear-gradient(135deg, #13ec5b 0%, #0bda43 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Top Navigation Bar -->
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-primary/20 px-6 lg:px-20 py-4 bg-background-light dark:bg-background-dark sticky top-0 z-50">
+                <div class="flex items-center gap-8">
+                    <a href="dashboard.html" class="flex items-center gap-3 text-primary">
+                        <div
+                            class="size-8 primary-gradient rounded-lg flex items-center justify-center text-background-dark">
+                            <span class="material-symbols-outlined font-bold">account_balance_wallet</span>
+                        </div>
+                        <h2 class="text-slate-900 dark:text-slate-100 text-xl font-black leading-tight tracking-tight">
+                            InvestAuto</h2>
+                    </a>
+                    <nav class="hidden md:flex items-center gap-8 ml-4">
+                        <a class="text-primary text-sm font-semibold border-b-2 border-primary pb-1"
+                            href="dashboard.html">Dashboard</a>
+                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium"
+                            href="plans.html">My Investments</a>
+                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium"
+                            href="withdrawals.html">Withdraw</a>
+                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium"
+                            href="settings.html">Profile</a>
+                    </nav>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="flex gap-2">
+                        <a href="deposits.html"
+                            class="flex items-center justify-center rounded-lg size-10 bg-slate-100 dark:bg-primary/10 text-slate-600 dark:text-slate-300 hover:bg-primary/20 transition-all"><span
+                                class="material-symbols-outlined">add_card</span></a>
+                        <a href="settings.html"
+                            class="flex items-center justify-center rounded-lg size-10 bg-slate-100 dark:bg-primary/10 text-slate-600 dark:text-slate-300 hover:bg-primary/20 transition-all"><span
+                                class="material-symbols-outlined">settings</span></a>
+                    </div>
+                    <div class="h-10 w-px bg-slate-200 dark:bg-primary/20 mx-2"></div>
+                    <div class="flex items-center gap-3 pl-2">
+                        <div class="text-right hidden sm:block">
+                            <p class="text-xs font-bold text-slate-900 dark:text-slate-100 leading-none">
+                                Bilal Ahmed
+                            </p>
+                            <p class="text-[10px] text-primary font-medium mt-1 uppercase tracking-wider">Investor</p>
+                        </div>
+                        <a href="#" class="logout-btn text-slate-400 hover:text-red-500 transition-colors"><span
+                                class="material-symbols-outlined">logout</span></a>
+                    </div>
+                </div>
+            </header>
+            <main class="flex flex-col flex-1 px-6 lg:px-20 py-8 max-w-[1440px] mx-auto w-full">
+                <!-- Welcome Section -->
+                <div class="flex flex-wrap justify-between items-end gap-4 mb-8">
+                    <div class="flex flex-col gap-1">
+                        <h1 class="text-slate-900 dark:text-slate-100 text-3xl font-black tracking-tight lg:text-4xl">
+                            Investment Overview</h1>
+                        <p class="text-slate-500 dark:text-slate-400 text-base">Welcome back, Bilal Ahmed. Your
+                                portfolio is active.</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="deposits.html"
+                            class="bg-primary/10 text-primary border border-primary/20 px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-primary/20 transition-all">Deposit
+                            Funds</a>
+                        <a href="plans.html"
+                            class="primary-gradient text-background-dark px-6 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-primary/20">New
+                            Investment</a>
+                    </div>
+                </div>
+                <!-- Main Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div
+                        class="flex flex-col gap-4 rounded-xl p-6 bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 shadow-sm relative overflow-hidden group">
+                        <div
+                            class="absolute -right-4 -top-4 size-24 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p
+                                class="text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider">
+                                Available Balance</p>
+                            <span class="material-symbols-outlined text-primary text-3xl">account_balance</span>
+                        </div>
+                        <div>
+                            <p class="text-slate-900 dark:text-slate-100 text-3xl font-black leading-tight">$18,750.00
+                            </p>
+                            <div class="flex items-center gap-1 mt-1">
+                                <span
+                                    class="material-symbols-outlined text-primary text-sm font-bold">trending_up</span>
+                                <p class="text-primary text-xs font-bold">Deposited: $50,000
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col gap-4 rounded-xl p-6 bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 shadow-sm relative overflow-hidden group">
+                        <div
+                            class="absolute -right-4 -top-4 size-24 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p
+                                class="text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider">
+                                Total Invested</p>
+                            <span class="material-symbols-outlined text-primary text-3xl">payments</span>
+                        </div>
+                        <div>
+                            <p class="text-slate-900 dark:text-slate-100 text-3xl font-black leading-tight">$35,000.00
+                            </p>
+                            <div class="flex items-center gap-1 mt-1">
+                                <span
+                                    class="material-symbols-outlined text-primary text-sm font-bold">keyboard_double_arrow_up</span>
+                                <p class="text-primary text-xs font-bold">Current Returns: $24,940
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col gap-4 rounded-xl p-6 bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 shadow-sm relative overflow-hidden group">
+                        <div
+                            class="absolute -right-4 -top-4 size-24 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p
+                                class="text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider">
+                                Active Investments</p>
+                            <span class="material-symbols-outlined text-primary text-3xl">robot_2</span>
+                        </div>
+                        <div>
+                            <p class="text-slate-900 dark:text-slate-100 text-xl font-black leading-tight">
+                                3 Active Plans
+                            </p>
+                            <div class="flex items-center gap-2 mt-2">
+                                <span class="flex size-2 rounded-full bg-primary animate-pulse"></span>
+                                <p
+                                    class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-widest">
+                                    Monitoring</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Left: Active Investments & Transactions -->
+                    <div class="lg:col-span-2 flex flex-col gap-6">
+                        <!-- Active Investments -->
+                        <div
+                            class="rounded-xl border border-slate-200 dark:border-primary/10 bg-white dark:bg-primary/5 p-6 shadow-sm">
+                            <h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold mb-4">Active Investments
+                            </h3>
+                            
+                                    <div class="space-y-4">
+                                        
+                                            <div
+                                                class="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors">
+                                                <div class="flex items-center gap-3">
+                                                    <div
+                                                        class="size-10 rounded bg-primary/10 flex items-center justify-center text-primary">
+                                                        <span class="material-symbols-outlined">trending_up</span></div>
+                                                    <div>
+                                                        <p class="text-sm font-bold text-slate-900 dark:text-slate-100">
+                                                            Starter Plan
+                                                        </p>
+                                                        <p class="text-xs text-slate-500">$2,000 invested • 14 days active</p>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right">
+                                                    <p class="text-sm font-bold text-primary">+$840
+                                                    </p>
+                                                    <p class="text-xs text-slate-500">of $1,800 projected</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div
+                                                class="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors">
+                                                <div class="flex items-center gap-3">
+                                                    <div
+                                                        class="size-10 rounded bg-primary/10 flex items-center justify-center text-primary">
+                                                        <span class="material-symbols-outlined">trending_up</span></div>
+                                                    <div>
+                                                        <p class="text-sm font-bold text-slate-900 dark:text-slate-100">
+                                                            Pro Plan
+                                                        </p>
+                                                        <p class="text-xs text-slate-500">$15,000 invested • 11 days active</p>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right">
+                                                    <p class="text-sm font-bold text-primary">+$6,600
+                                                    </p>
+                                                    <p class="text-xs text-slate-500">of $36,000 projected</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div
+                                                class="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors">
+                                                <div class="flex items-center gap-3">
+                                                    <div
+                                                        class="size-10 rounded bg-primary/10 flex items-center justify-center text-primary">
+                                                        <span class="material-symbols-outlined">trending_up</span></div>
+                                                    <div>
+                                                        <p class="text-sm font-bold text-slate-900 dark:text-slate-100">
+                                                            Elite Plan
+                                                        </p>
+                                                        <p class="text-xs text-slate-500">$50,000 invested • 7 days active</p>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right">
+                                                    <p class="text-sm font-bold text-primary">+$17,500
+                                                    </p>
+                                                    <p class="text-xs text-slate-500">of $225,000 projected</p>
+                                                </div>
+                                            </div>
+                                            
+                                    </div>
+                                    
+                        </div>
+                        <!-- Recent Transactions -->
+                        <div
+                            class="rounded-xl border border-slate-200 dark:border-primary/10 bg-white dark:bg-primary/5 p-6 shadow-sm">
+                            <h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold mb-4">Recent Transactions
+                            </h3>
+                            
+                                    <div class="space-y-4">
+                                        
+                                            <div
+                                                class="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors">
+                                                <div class="flex items-center gap-3">
+                                                    <div
+                                                        class="size-10 rounded bg-primary/10 flex items-center justify-center text-primary">
+                                                        <span class="material-symbols-outlined">
+                                                            add_card
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <p
+                                                            class="text-sm font-bold text-slate-900 dark:text-slate-100 capitalize">
+                                                            deposit
+                                                        </p>
+                                                        <p class="text-xs text-slate-500">
+                                                            Deposit via Bank Transfer
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right">
+                                                    <p
+                                                        class="text-sm font-bold text-primary">
+                                                        +$20,000
+                                                    </p>
+                                                    <p class="text-xs text-slate-500 capitalize">
+                                                        completed
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div
+                                                class="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors">
+                                                <div class="flex items-center gap-3">
+                                                    <div
+                                                        class="size-10 rounded bg-slate-400/10 flex items-center justify-center text-slate-400">
+                                                        <span class="material-symbols-outlined">
+                                                            trending_up
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <p
+                                                            class="text-sm font-bold text-slate-900 dark:text-slate-100 capitalize">
+                                                            investment
+                                                        </p>
+                                                        <p class="text-xs text-slate-500">
+                                                            Invested $15,000 in Pro plan
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right">
+                                                    <p
+                                                        class="text-sm font-bold text-red-500">
+                                                        -$15,000
+                                                    </p>
+                                                    <p class="text-xs text-slate-500 capitalize">
+                                                        completed
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div
+                                                class="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors">
+                                                <div class="flex items-center gap-3">
+                                                    <div
+                                                        class="size-10 rounded bg-slate-400/10 flex items-center justify-center text-slate-400">
+                                                        <span class="material-symbols-outlined">
+                                                            paid
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <p
+                                                            class="text-sm font-bold text-slate-900 dark:text-slate-100 capitalize">
+                                                            profit
+                                                        </p>
+                                                        <p class="text-xs text-slate-500">
+                                                            Daily ROI from Starter plan
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right">
+                                                    <p
+                                                        class="text-sm font-bold text-primary">
+                                                        +$840
+                                                    </p>
+                                                    <p class="text-xs text-slate-500 capitalize">
+                                                        completed
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div
+                                                class="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors">
+                                                <div class="flex items-center gap-3">
+                                                    <div
+                                                        class="size-10 rounded bg-primary/10 flex items-center justify-center text-primary">
+                                                        <span class="material-symbols-outlined">
+                                                            add_card
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <p
+                                                            class="text-sm font-bold text-slate-900 dark:text-slate-100 capitalize">
+                                                            deposit
+                                                        </p>
+                                                        <p class="text-xs text-slate-500">
+                                                            Deposit via Crypto
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right">
+                                                    <p
+                                                        class="text-sm font-bold text-primary">
+                                                        +$30,000
+                                                    </p>
+                                                    <p class="text-xs text-slate-500 capitalize">
+                                                        completed
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div
+                                                class="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors">
+                                                <div class="flex items-center gap-3">
+                                                    <div
+                                                        class="size-10 rounded bg-red-500/10 flex items-center justify-center text-red-500">
+                                                        <span class="material-symbols-outlined">
+                                                            send
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <p
+                                                            class="text-sm font-bold text-slate-900 dark:text-slate-100 capitalize">
+                                                            withdrawal
+                                                        </p>
+                                                        <p class="text-xs text-slate-500">
+                                                            Withdrawal to bank
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right">
+                                                    <p
+                                                        class="text-sm font-bold text-red-500">
+                                                        -$5,000
+                                                    </p>
+                                                    <p class="text-xs text-slate-500 capitalize">
+                                                        completed
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div
+                                                class="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors">
+                                                <div class="flex items-center gap-3">
+                                                    <div
+                                                        class="size-10 rounded bg-slate-400/10 flex items-center justify-center text-slate-400">
+                                                        <span class="material-symbols-outlined">
+                                                            trending_up
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <p
+                                                            class="text-sm font-bold text-slate-900 dark:text-slate-100 capitalize">
+                                                            investment
+                                                        </p>
+                                                        <p class="text-xs text-slate-500">
+                                                            Invested $50,000 in Elite plan
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right">
+                                                    <p
+                                                        class="text-sm font-bold text-red-500">
+                                                        -$50,000
+                                                    </p>
+                                                    <p class="text-xs text-slate-500 capitalize">
+                                                        completed
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                    </div>
+                                    
+                        </div>
+                    </div>
+                    <!-- Right Sidebar -->
+                    <div class="flex flex-col gap-6">
+                        <!-- Quick Actions Card -->
+                        <div class="rounded-xl primary-gradient p-6 shadow-xl shadow-primary/10 text-background-dark">
+                            <h3 class="text-lg font-black mb-1">Quick Actions</h3>
+                            <p class="text-background-dark/70 text-sm mb-6 font-medium">Manage your funds and
+                                investments.</p>
+                            <div class="space-y-3">
+                                <a href="deposits.html"
+                                    class="w-full bg-background-dark text-primary font-bold py-3 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-background-dark/90 transition-colors"><span
+                                        class="material-symbols-outlined text-sm">add_card</span> Deposit Funds</a>
+                                <a href="withdrawals.html"
+                                    class="w-full bg-background-dark/50 text-white font-bold py-3 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-background-dark/70 transition-colors"><span
+                                        class="material-symbols-outlined text-sm">send</span> Request Withdrawal</a>
+                            </div>
+                        </div>
+                        <!-- Available Plans -->
+                        <div
+                            class="rounded-xl border border-slate-200 dark:border-primary/10 bg-white dark:bg-primary/5 p-6 shadow-sm">
+                            <h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold mb-6">Available Plans</h3>
+                            <div class="space-y-4">
+                                
+                                    <a href="plans.html"
+                                        class="flex flex-col gap-2 p-3 rounded-lg hover:bg-primary/5 transition-colors block">
+                                        <div class="flex justify-between text-xs font-bold text-slate-500 uppercase">
+                                            <span>
+                                                Starter
+                                            </span>
+                                            <span class="text-primary">
+                                                3% Daily
+                                            </span>
+                                        </div>
+                                        <div class="flex justify-between text-xs text-slate-400">
+                                            <span>$100 - $2,500</span>
+                                            <span>
+                                                30 days
+                                            </span>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="plans.html"
+                                        class="flex flex-col gap-2 p-3 rounded-lg hover:bg-primary/5 transition-colors block">
+                                        <div class="flex justify-between text-xs font-bold text-slate-500 uppercase">
+                                            <span>
+                                                Pro
+                                            </span>
+                                            <span class="text-primary">
+                                                4% Daily
+                                            </span>
+                                        </div>
+                                        <div class="flex justify-between text-xs text-slate-400">
+                                            <span>$2,501 - $25,000</span>
+                                            <span>
+                                                60 days
+                                            </span>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="plans.html"
+                                        class="flex flex-col gap-2 p-3 rounded-lg hover:bg-primary/5 transition-colors block">
+                                        <div class="flex justify-between text-xs font-bold text-slate-500 uppercase">
+                                            <span>
+                                                Elite
+                                            </span>
+                                            <span class="text-primary">
+                                                5% Daily
+                                            </span>
+                                        </div>
+                                        <div class="flex justify-between text-xs text-slate-400">
+                                            <span>$25,001 - $1,000,000</span>
+                                            <span>
+                                                90 days
+                                            </span>
+                                        </div>
+                                    </a>
+                                    
+                            </div>
+                        </div>
+                        <!-- System Status -->
+                        <div
+                            class="rounded-xl border border-slate-200 dark:border-primary/10 bg-white dark:bg-primary/5 p-4 flex items-center gap-4">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined">bolt</span></div>
+                            <div>
+                                <p class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-none">AI Core
+                                    Status</p>
+                                <p class="text-xs text-primary font-bold mt-1 uppercase tracking-tighter">Optimal
+                                    Performance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

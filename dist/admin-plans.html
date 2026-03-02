@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Plan Management - InvestWise
+    </title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#13ec5b", "background-dark": "#0a120c", "card-dark": "#1c232e", "border-dark": "#2d3646", "text-secondary": "#9da6b9" }, fontFamily: { "display": ["Inter"] } } } }</script>
+</head>
+
+<body class="bg-background-dark font-display text-slate-100 antialiased">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Admin Sidebar Partial -->
+<aside class="w-64 flex-shrink-0 flex flex-col bg-black/40 border-r border-primary/10 backdrop-blur-md">
+    <div class="p-6 flex items-center gap-3">
+        <div class="bg-primary/20 p-2 rounded-lg"><span
+                class="material-symbols-outlined text-primary">account_balance_wallet</span></div>
+        <div>
+            <h1 class="text-sm font-bold tracking-tight uppercase text-primary">InvestWise Admin</h1>
+            <p class="text-[10px] text-slate-400 font-medium">Control Panel</p>
+        </div>
+    </div>
+    <nav class="flex-1 mt-4 px-3 space-y-1">
+        <a href="admin.html"
+            class="text-slate-400 hover:text-primary hover:bg-primary/5 flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all">
+            <span class="material-symbols-outlined">dashboard</span><span
+                class="text-sm font-medium">Overview</span></a>
+        <a href="admin-users.html"
+            class="text-slate-400 hover:text-primary hover:bg-primary/5 flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all">
+            <span class="material-symbols-outlined">group</span><span class="text-sm font-medium">Users</span></a>
+        <a href="admin-plans.html"
+            class="bg-primary/15 text-primary border-r-[3px] border-primary flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all">
+            <span class="material-symbols-outlined">monetization_on</span><span
+                class="text-sm font-medium">Plans</span></a>
+        <a href="admin-deposits.html"
+            class="text-slate-400 hover:text-primary hover:bg-primary/5 flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all">
+            <span class="material-symbols-outlined">add_card</span><span class="text-sm font-medium">Deposits</span></a>
+        <a href="admin-withdrawals.html"
+            class="text-slate-400 hover:text-primary hover:bg-primary/5 flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all">
+            <span class="material-symbols-outlined">send</span><span class="text-sm font-medium">Withdrawals</span></a>
+    </nav>
+    <div class="p-4 border-t border-primary/5">
+        <div class="bg-primary/5 rounded-xl p-4 border border-primary/10">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center"><span
+                        class="material-symbols-outlined text-primary text-sm">admin_panel_settings</span></div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-xs font-semibold truncate">
+                        Bilal Admin
+                    </p>
+                    <p class="text-[10px] text-primary/70">Admin</p>
+                </div>
+                <a href="#" class="logout-btn"><span
+                        class="material-symbols-outlined text-xs text-slate-500 hover:text-red-500">logout</span></a>
+            </div>
+        </div>
+    </div>
+</aside>
+            <main class="flex-1 flex flex-col overflow-y-auto">
+                <header
+                    class="h-16 flex items-center justify-between px-8 border-b border-primary/5 sticky top-0 bg-background-dark/80 backdrop-blur-md z-10">
+                    <h2 class="text-lg font-bold">Investment Plans</h2>
+                    <button onclick="document.getElementById('createPlanModal').classList.toggle('hidden')"
+                        class="flex items-center gap-2 h-10 px-6 rounded-lg bg-primary hover:brightness-110 text-background-dark text-sm font-bold transition-all">
+                        <span class="material-symbols-outlined text-[20px]">add</span>Create New Plan</button>
+                </header>
+                <div class="p-8 space-y-8 max-w-7xl mx-auto w-full">
+                    <!-- Stats -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="bg-card-dark border border-border-dark p-4 rounded-xl flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500">
+                                <span class="material-symbols-outlined">trending_up</span></div>
+                            <div>
+                                <p class="text-text-secondary text-xs uppercase font-semibold tracking-wider">Active
+                                    Investments</p>
+                                <p class="text-white text-xl font-bold">$67,000
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bg-card-dark border border-border-dark p-4 rounded-xl flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-500">
+                                <span class="material-symbols-outlined">group</span></div>
+                            <div>
+                                <p class="text-text-secondary text-xs uppercase font-semibold tracking-wider">Total
+                                    Subscribers</p>
+                                <p class="text-white text-xl font-bold">
+                                    4
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bg-card-dark border border-border-dark p-4 rounded-xl flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500">
+                                <span class="material-symbols-outlined">stars</span></div>
+                            <div>
+                                <p class="text-text-secondary text-xs uppercase font-semibold tracking-wider">Total
+                                    Plans</p>
+                                <p class="text-white text-xl font-bold">
+                                    3
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Plans Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                            
+                                <article
+                                    class="flex flex-col rounded-xl border border-border-dark bg-card-dark overflow-hidden group hover:border-primary/50 transition-colors relative">
+                                    <div
+                                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600">
+                                    </div>
+                                    <div class="p-6 flex flex-col gap-4 flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <h2 class="text-white text-xl font-bold">
+                                                    Starter
+                                                </h2>
+                                                <span
+                                                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium w-fit border bg-emerald-500/10 text-emerald-500 border-emerald-500/20">
+                                                    active
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex items-baseline gap-1 text-white mb-1"><span
+                                                    class="text-3xl font-black tracking-tight">$100</span><span
+                                                    class="text-text-secondary text-sm font-medium">min</span></div>
+                                            <p class="text-sm text-text-secondary">
+                                                Perfect for beginners testing the platform.
+                                            </p>
+                                        </div>
+                                        <ul class="flex flex-col gap-2 text-sm text-slate-300">
+                                            <li class="flex items-center gap-2"><span
+                                                    class="material-symbols-outlined text-primary text-lg">check_circle</span>ROI:
+                                                <strong class="text-white">
+                                                    3% daily
+                                                </strong></li>
+                                            <li class="flex items-center gap-2"><span
+                                                    class="material-symbols-outlined text-primary text-lg">check_circle</span>Duration:
+                                                <strong class="text-white">
+                                                    30 days
+                                                </strong></li>
+                                            <li class="flex items-center gap-2"><span
+                                                    class="material-symbols-outlined text-primary text-lg">check_circle</span>Max:
+                                                <strong class="text-white">$2,500
+                                                        </strong></li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-6 pt-0 mt-auto flex gap-3">
+                                        <button onclick="deletePlan('p1')"
+                                            class="h-10 w-10 rounded-lg bg-white/5 hover:bg-red-500/20 hover:text-red-500 text-text-secondary transition-colors border border-border-dark flex items-center justify-center">
+                                            <span class="material-symbols-outlined text-[18px]">delete</span></button>
+                                    </div>
+                                </article>
+                                
+                            
+                                <article
+                                    class="flex flex-col rounded-xl border border-border-dark bg-card-dark overflow-hidden group hover:border-primary/50 transition-colors relative">
+                                    <div
+                                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-400 to-purple-600">
+                                    </div>
+                                    <div class="p-6 flex flex-col gap-4 flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <h2 class="text-white text-xl font-bold">
+                                                    Pro
+                                                </h2>
+                                                <span
+                                                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium w-fit border bg-emerald-500/10 text-emerald-500 border-emerald-500/20">
+                                                    active
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex items-baseline gap-1 text-white mb-1"><span
+                                                    class="text-3xl font-black tracking-tight">$2,501</span><span
+                                                    class="text-text-secondary text-sm font-medium">min</span></div>
+                                            <p class="text-sm text-text-secondary">
+                                                For experienced traders seeking higher returns.
+                                            </p>
+                                        </div>
+                                        <ul class="flex flex-col gap-2 text-sm text-slate-300">
+                                            <li class="flex items-center gap-2"><span
+                                                    class="material-symbols-outlined text-primary text-lg">check_circle</span>ROI:
+                                                <strong class="text-white">
+                                                    4% daily
+                                                </strong></li>
+                                            <li class="flex items-center gap-2"><span
+                                                    class="material-symbols-outlined text-primary text-lg">check_circle</span>Duration:
+                                                <strong class="text-white">
+                                                    60 days
+                                                </strong></li>
+                                            <li class="flex items-center gap-2"><span
+                                                    class="material-symbols-outlined text-primary text-lg">check_circle</span>Max:
+                                                <strong class="text-white">$25,000
+                                                        </strong></li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-6 pt-0 mt-auto flex gap-3">
+                                        <button onclick="deletePlan('p2')"
+                                            class="h-10 w-10 rounded-lg bg-white/5 hover:bg-red-500/20 hover:text-red-500 text-text-secondary transition-colors border border-border-dark flex items-center justify-center">
+                                            <span class="material-symbols-outlined text-[18px]">delete</span></button>
+                                    </div>
+                                </article>
+                                
+                            
+                                <article
+                                    class="flex flex-col rounded-xl border border-border-dark bg-card-dark overflow-hidden group hover:border-primary/50 transition-colors relative">
+                                    <div
+                                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-amber-600">
+                                    </div>
+                                    <div class="p-6 flex flex-col gap-4 flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <h2 class="text-white text-xl font-bold">
+                                                    Elite
+                                                </h2>
+                                                <span
+                                                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium w-fit border bg-emerald-500/10 text-emerald-500 border-emerald-500/20">
+                                                    active
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex items-baseline gap-1 text-white mb-1"><span
+                                                    class="text-3xl font-black tracking-tight">$25,001</span><span
+                                                    class="text-text-secondary text-sm font-medium">min</span></div>
+                                            <p class="text-sm text-text-secondary">
+                                                Maximum yield for institutional investors.
+                                            </p>
+                                        </div>
+                                        <ul class="flex flex-col gap-2 text-sm text-slate-300">
+                                            <li class="flex items-center gap-2"><span
+                                                    class="material-symbols-outlined text-primary text-lg">check_circle</span>ROI:
+                                                <strong class="text-white">
+                                                    5% daily
+                                                </strong></li>
+                                            <li class="flex items-center gap-2"><span
+                                                    class="material-symbols-outlined text-primary text-lg">check_circle</span>Duration:
+                                                <strong class="text-white">
+                                                    90 days
+                                                </strong></li>
+                                            <li class="flex items-center gap-2"><span
+                                                    class="material-symbols-outlined text-primary text-lg">check_circle</span>Max:
+                                                <strong class="text-white">$1,000,000
+                                                        </strong></li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-6 pt-0 mt-auto flex gap-3">
+                                        <button onclick="deletePlan('p3')"
+                                            class="h-10 w-10 rounded-lg bg-white/5 hover:bg-red-500/20 hover:text-red-500 text-text-secondary transition-colors border border-border-dark flex items-center justify-center">
+                                            <span class="material-symbols-outlined text-[18px]">delete</span></button>
+                                    </div>
+                                </article>
+                                
+                    </div>
+                </div>
+                <!-- Create Plan Modal -->
+                <div id="createPlanModal"
+                    class="hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+                    <div
+                        class="bg-card-dark border border-border-dark rounded-xl p-6 w-full max-w-lg max-h-[90vh] overflow-y-auto">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-bold">Create New Plan</h3>
+                            <button onclick="document.getElementById('createPlanModal').classList.add('hidden')"
+                                class="text-slate-400 hover:text-white"><span
+                                    class="material-symbols-outlined">close</span></button>
+                        </div>
+                        <form id="createPlanForm" class="space-y-4">
+                            <div><label class="text-sm font-medium text-slate-300 mb-1 block">Plan Name</label><input
+                                    class="w-full rounded-lg bg-white/5 border border-border-dark px-4 py-3 text-sm focus:ring-primary focus:border-primary"
+                                    name="name" required /></div>
+                            <div><label class="text-sm font-medium text-slate-300 mb-1 block">Description</label><input
+                                    class="w-full rounded-lg bg-white/5 border border-border-dark px-4 py-3 text-sm focus:ring-primary focus:border-primary"
+                                    name="description" /></div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div><label class="text-sm font-medium text-slate-300 mb-1 block">Min Amount
+                                        ($)</label><input
+                                        class="w-full rounded-lg bg-white/5 border border-border-dark px-4 py-3 text-sm focus:ring-primary focus:border-primary"
+                                        name="minAmount" type="number" required /></div>
+                                <div><label class="text-sm font-medium text-slate-300 mb-1 block">Max Amount
+                                        ($)</label><input
+                                        class="w-full rounded-lg bg-white/5 border border-border-dark px-4 py-3 text-sm focus:ring-primary focus:border-primary"
+                                        name="maxAmount" type="number" required /></div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div><label class="text-sm font-medium text-slate-300 mb-1 block">Daily ROI
+                                        (%)</label><input
+                                        class="w-full rounded-lg bg-white/5 border border-border-dark px-4 py-3 text-sm focus:ring-primary focus:border-primary"
+                                        name="roiPercentage" type="number" step="0.1" required /></div>
+                                <div><label class="text-sm font-medium text-slate-300 mb-1 block">Duration
+                                        (days)</label><input
+                                        class="w-full rounded-lg bg-white/5 border border-border-dark px-4 py-3 text-sm focus:ring-primary focus:border-primary"
+                                        name="durationDays" type="number" required /></div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div><label class="text-sm font-medium text-slate-300 mb-1 block">Referral Bonus
+                                        (%)</label><input
+                                        class="w-full rounded-lg bg-white/5 border border-border-dark px-4 py-3 text-sm focus:ring-primary focus:border-primary"
+                                        name="referralBonus" type="number" value="0" /></div>
+                                <div><label class="text-sm font-medium text-slate-300 mb-1 block">Support
+                                        Level</label><select
+                                        class="w-full rounded-lg bg-white/5 border border-border-dark px-4 py-3 text-sm focus:ring-primary focus:border-primary"
+                                        name="supportLevel">
+                                        <option>Standard</option>
+                                        <option>Priority</option>
+                                        <option>24/7 Dedicated</option>
+                                    </select></div>
+                            </div>
+                            <button type="button" onclick="savePlan('createPlanForm')"
+                                class="w-full bg-primary text-background-dark py-3 rounded-lg font-bold text-sm hover:brightness-110 transition-all">Create
+                                Plan</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
